@@ -26,7 +26,6 @@ namespace TestAvalonia
 
         public Live2DViewer():base()
         {
-            
         }
 
         private static void openGLDebugCallback(DebugSource source, DebugType type, int id, DebugSeverity severity, int length, IntPtr message, IntPtr userParam)
@@ -38,7 +37,9 @@ namespace TestAvalonia
 
         protected override void OnOpenGlInit(GlInterface gl, int fb)
         {
+            Console.WriteLine(GL.GetError());
             base.OnOpenGlInit(gl, fb);
+            Console.WriteLine(GL.GetError());
 
             Asset = new CubismAsset(@"hiyori_free_t06.model3.json", (string file_path) =>
             {
